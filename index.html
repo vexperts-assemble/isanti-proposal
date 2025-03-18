@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Isanti Glass - Website Proposal</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/themes/df-messenger-default.css">
+<script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"></script>
+<df-messenger
+  project-id="resonant-augury-392410"
+  agent-id="70cc96fb-21a2-4f58-af7a-065c131cd6a5"
+  language-code="en"
+  max-query-length="-1">
+  <df-messenger-chat-bubble
+    chat-title="Isanti demo">
+  </df-messenger-chat-bubble>
+</df-messenger>
+<style>
+  df-messenger {
+    z-index: 999;
+    position: fixed;
+    --df-messenger-font-color: #000;
+    --df-messenger-font-family: Google Sans;
+    --df-messenger-chat-background: #f3f6fc;
+    --df-messenger-message-user-background: #d3e3fd;
+    --df-messenger-message-bot-background: #fff;
+    bottom: 16px;
+    right: 16px;
+  }
+</style>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+        }
+        .yellow-accent {
+            background-color: #f2ff00;
+        }
+        .hero-section {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/api/placeholder/1200/600');
+            background-size: cover;
+            background-position: center;
+        }
+        .chatbot-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .chatbot-button:hover {
+            transform: scale(1.1);
+        }
+        .timeline-item {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 50px;
+        }
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            background-color: #f2ff00;
+            border-radius: 50%;
+        }
+        .timeline-item:after {
+            content: '';
+            position: absolute;
+            left: 9px;
+            top: 20px;
+            width: 2px;
+            height: calc(100% + 30px);
+            background-color: #e5e7eb;
+        }
+        .timeline-item:last-child:after {
+            display: none;
+        }
+        .glass-bg {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        section {
+            scroll-margin-top: 100px;
+        }
+        .rotate-on-hover:hover {
+            transform: rotate(15deg);
+            transition: transform 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <!-- Navigation -->
+    <header class="bg-white shadow-md fixed w-full z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <div class="yellow-accent w-6 h-12 mr-3"></div>
+                <h1 class="text-2xl font-bold">VEX</h1>
+            </div>
+            <nav>
+                <ul class="flex space-x-8">
+                    <li><a href="#summary" class="text-gray-800 hover:text-black font-medium">Summary</a></li>
+                    <li><a href="#options" class="text-gray-800 hover:text-black font-medium">Options</a></li>
+                    <li><a href="#tech-stack" class="text-gray-800 hover:text-black font-medium">Tech Stack</a></li>
+                    <li><a href="#timeline" class="text-gray-800 hover:text-black font-medium">Timeline</a></li>
+                    <li><a href="#payment" class="text-gray-800 hover:text-black font-medium">Payment</a></li>
+                    <li><a href="#contact" class="text-gray-800 hover:text-black font-medium">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section h-screen flex items-center">
+        <div class="container mx-auto px-4 text-white">
+            <div class="flex">
+                <div class="yellow-accent w-3 h-32 mr-6"></div>
+                <div>
+                    <h1 class="text-5xl font-bold mb-2">Isanti Glass</h1>
+                    <h2 class="text-7xl font-bold mb-8">WEBSITE PROPOSAL</h2>
+                    <p class="text-xl mb-8">Presented by Visual Experience Xperts</p>
+                    <p class="text-xl">2025</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Executive Summary -->
+    <section id="summary" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-5xl font-bold mb-12 text-center">Executive Summary</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">Background</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        VEX is excited to present two tailored solutions for redesigning the Isanti Glass website, each harnessing cutting-edge technology to showcase your premium glass products and streamline client interactions. Our proposals blend innovative design, artificial intelligence, and seamless integrations to position Isanti Glass as a leader in the industry, delivering value to both your team and your customers.
+                    </p>
+                </div>
+                <div>
+                    <img src="./assets/office.jpg" alt="Modern office with glass walls" class="rounded-lg shadow-xl w-full h-auto">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Implementation Options -->
+    <section id="options" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-5xl font-bold mb-12 text-center">Implementation Options</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Basic Implementation -->
+                <div class="bg-white p-8 rounded-xl shadow-lg transform transition-transform hover:scale-105">
+                    <div class="flex justify-between items-start mb-6">
+                        <h3 class="text-2xl font-bold">Basic Implementation</h3>
+                        <div class="text-xl font-semibold text-gray-700">R150,000 CAPEX</div>
+                    </div>
+                    <p class="text-gray-700 mb-6 leading-relaxed">
+                        This cost-effective option lays a solid foundation for your digital evolution. Powered by Strapi's flexible content management system (with MySQL) and Caisera.ai's Standard tier for minimal yet impactful chatbot scenarios—such as answering FAQs and engaging new leads—this solution offers a responsive website with simplified AR/3D product previews (via Three.js) and a secure client portal (using Firebase Authentication). It's an ideal starting point for a lean, efficient online presence that meets essential needs while keeping future scalability in sight.
+                    </p>
+                    <div class="mt-4">
+                        <a href="#basic-price" class="inline-block bg-yellow-400 hover:bg-yellow-500 text-black font-bold py-2 px-6 rounded-lg transition">View Pricing Details</a>
+                    </div>
+                </div>
+                
+                <!-- Full Implementation -->
+                <div class="bg-black text-white p-8 rounded-xl shadow-lg transform transition-transform hover:scale-105">
+                    <div class="flex justify-between items-start mb-6">
+                        <h3 class="text-2xl font-bold">Full Implementation</h3>
+                        <div class="text-xl font-semibold text-yellow-400">R899,000 CAPEX</div>
+                    </div>
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                        For those ready to fully embrace the future, this comprehensive package delivers a premium digital experience. Leveraging Strapi's robust CMS capabilities and Caisera.ai's Professional or Premium tier—supporting advanced scenarios like AI-driven sales cycles and detailed customer support—this option includes a visually stunning website with real-time AR/3D previews (powered by Unity) and an enhanced client portal (featuring Firebase Authentication with 2FA and a custom UI). It's a bold investment in innovation, designed to captivate clients, boost conversions, and solidify Isanti Glass's market dominance.
+                    </p>
+                    <div class="mt-4">
+                        <a href="#full-price" class="inline-block bg-yellow-400 hover:bg-yellow-500 text-black font-bold py-2 px-6 rounded-lg transition">View Pricing Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Price Breakdown -->
+    <section id="basic-price" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold mb-12">Price Breakdown (Option 1)</h2>
+            <div class="overflow-x-auto">
+                <table class="min-w-full bg-white border border-gray-200 rounded-lg shadow-md">
+                    <thead>
+                        <tr class="bg-gray-100">
+                            <th class="py-4 px-6 text-left font-bold">Requirement</th>
+                            <th class="py-4 px-6 text-left font-bold">Description/Approach</th>
+                            <th class="py-4 px-6 text-left font-bold">Duration</th>
+                            <th class="py-4 px-6 text-left font-bold">CAPEX Cost (R)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-t border-gray-200">
+                            <td class="py-4 px-6 text-gray-800 font-medium">FR1: Custom Design and Development</td>
+                            <td class="py-4 px-6 text-gray-600">Simplified redesign with basic branding (colors, fonts). Minimal animations, scalable structure.</td>
+                            <td class="py-4 px-6 text-gray-600">1.5 weeks</td>
+                            <td class="py-4 px-6 text-gray-800 font-semibold">30,000</td>
+                        </tr>
+                        <tr class="border-t border-gray-200 bg-gray-50">
+                            <td class="py-4 px-6 text-gray-800 font-medium">FR2: User Experience (UX) and User Interface (UI)</td>
+                            <td class="py-4 px-6 text-gray-600">Mobile-first UI with basic brand fonts and imagery. Static Glass image design</td>
+                            <td class="py-4 px-6 text-gray-600">1 week</td>
+                            <td class="py-4 px-6 text-gray-800 font-semibold">20,000</td>
+                        </tr>
+                        <tr class="border-t border-gray-200">
+                            <td class="py-4 px-6 text-gray-800 font-medium">FR3: Content Creation and CMS Integration</td>
+                            <td class="py-4 px-6 text-gray-600">Basic SEO content and Strapi CMS with MySQL, minimal API endpoints</td>
+                            <td class="py-4 px-6 text-gray-600">1.5 weeks</td>
+                            <td class="py-4 px-6 text-gray-800 font-semibold">25,000</td>
+                        </tr>
+                        <tr class="border-t border-gray-200 bg-gray-50">
+                            <td class="py-4 px-6 text-gray-800 font-medium">FR4: AI Chatbot</td>
+                            <td class="py-4 px-6 text-gray-600">Caisera.ai (Standard tier) for basic FAQs and inquiries, simple API/webhook integration.</td>
+                            <td class="py-4 px-6 text-gray-600">0.5 weeks</td>
+                            <td class="py-4 px-6 text-gray-800 font-semibold">20,000</td>
+                        </tr>
+                        <tr class="border-t border-gray-200">
+                            <td class="py-4 px-6 text-gray-800 font-medium">FR5: Advanced Features</td>
+                            <td class="py-4 px-6 text-gray-600">Basic AR/3D previews (static 3D via Three.js) and a secure client portal (Firebase Auth) for product info/ordering.</td>
+                            <td class="py-4 px-6 text-gray-600">1.5 weeks</td>
+                            <td class="py-4 px-6 text-gray-800 font-semibold">35,000</td>
+                        </tr>
+                        <tr class="border-t border-gray-200 bg-gray-50">
+                            <td class="py-4 px-6 text-gray-800 font-medium">FR6: Security and SEO</td>
+                            <td class="py-4 px-6 text-gray-600">SSL, basic firewall, Google Analytics with minimal API setup. Basic portal security.</td>
+                            <td class="py-4 px-6 text-gray-600">0.5 weeks</td>
+                            <td class="py-4 px-6 text-gray-800 font-semibold">15,000</td>
+                        </tr>
+                        <tr class="border-t border-gray-200">
+                            <td class="py-4 px-6 text-gray-800 font-medium">FR7: Maintenance and Support</td>
+                            <td class="py-4 px-6 text-gray-600">Initial setup only (basic API/webhook docs). Ongoing maintenance excluded (OPEX).</td>
+                            <td class="py-4 px-6 text-gray-600">0.5 weeks</td>
+                            <td class="py-4 px-6 text-gray-800 font-semibold">5,000</td>
+                        </tr>
+                        <tr class="border-t border-gray-200 bg-gray-100">
+                            <td class="py-4 px-6 text-gray-900 font-bold">Total CAPEX Ex Vat</td>
+                            <td class="py-4 px-6"></td>
+                            <td class="py-4 px-6 text-gray-900 font-bold">2.5 months</td>
+                            <td class="py-4 px-6 text-gray-900 font-bold">150,000</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="mt-6 text-gray-700">
+                <p><strong>Caisera.ai Scenarios (Basic):</strong> Inbound FAQs (e.g., "What glass products do you offer?"), basic outbound lead intros.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Full Implementation Price Breakdown -->
+    <section id="full-price" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold mb-12">Price Breakdown (Option 2)</h2>
+            <div class="overflow-x-auto">
+                <table class="min-w-full bg-white border border-gray-200 rounded-lg shadow-md">
+                    <thead>
+                        <tr class="bg-gray-100">
+                            <th class="py-4 px-6 text-left font-bold">Requirement</th>
+                            <th class="py-4 px-6 text-left font-bold">Description/Approach</th>
+                            <th class="py-4 px-6 text-left font-bold">Duration</th>
+                            <th class="py-4 px-6 text-left font-bold">CAPEX Cost (R)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-t border-gray-200">
+                            <td class="py-4 px-6 text-gray-800 font-medium">FR1: Custom Design and Development</td>
+                            <td class="py-4 px-6 text-gray-600">Premium redesign with full branding (colors, fonts, animations). Dynamic scrolling, scalable structure.</td>
+                            <td class="py-4 px-6 text-gray-600">3 weeks</td>
+                            <td class="py-4 px-6 text-gray-800 font-semibold">150,000</td>
+                        </tr>
+                        <tr class="border-t border-gray-200 bg-gray-50">
+                            <td class="py-4 px-6 text-gray-800 font-medium">FR2: User Experience (UX) and User Interface (UI)</td>
+                            <td class="py-4 px-6 text-gray-600">Advanced mobile-first UI with interactive bottle design, animations, premium imagery.</td>
+                            <td class="py-4 px-6 text-gray-600">3 weeks</td>
+                            <td class="py-4 px-6 text-gray-800 font-semibold">120,000</td>
+                        </tr>
+                        <tr class="border-t border-gray-200">
+                            <td class="py-4 px-6 text-gray-800 font-medium">FR3: Content Creation and CMS Integration</td>
+                            <td class="py-4 px-6 text-gray-600">Comprehensive SEO content and Strapi CMS with MySQL, extensive API endpoints</td>
+                            <td class="py-4 px-6 text-gray-600">3 weeks</td>
+                            <td class="py-4 px-6 text-gray-800 font-semibold">130,000</td>
+                        </tr>
+                        <tr class="border-t border-gray-200 bg-gray-50">
+                            <td class="py-4 px-6 text-gray-800 font-medium">FR4: AI Chatbot</td>
+                            <td class="py-4 px-6 text-gray-600">Caisera.ai (Professional/Premium tier) with advanced sales cycle support, robust API/webhook integration.</td>
+                            <td class="py-4 px-6 text-gray-600">2 weeks</td>
+                            <td class="py-4 px-6 text-gray-800 font-semibold">100,000</td>
+                        </tr>
+                        <tr class="border-t border-gray-200">
+                            <td class="py-4 px-6 text-gray-800 font-medium">FR5: Advanced Features</td>
+                            <td class="py-4 px-6 text-gray-600">Full AR/3D previews (real-time AR via Unity) and a secure client portal (Firebase Auth + 2FA) for product info/ordering</td>
+                            <td class="py-4 px-6 text-gray-600">4 weeks</td>
+                            <td class="py-4 px-6 text-gray-800 font-semibold">250,000</td>
+                        </tr>
+                        <tr class="border-t border-gray-200 bg-gray-50">
+                            <td class="py-4 px-6 text-gray-800 font-medium">FR6: Security and SEO</td>
+                            <td class="py-4 px-6 text-gray-600">SSL, advanced firewall, Google Analytics with full API setup, enhanced portal security (2FA).</td>
+                            <td class="py-4 px-6 text-gray-600">2 weeks</td>
+                            <td class="py-4 px-6 text-gray-800 font-semibold">149,000</td>
+                        </tr>
+                        <tr class="border-t border-gray-200 bg-gray-100">
+                            <td class="py-4 px-6 text-gray-900 font-bold">Total CAPEX Ex Vat</td>
+                            <td class="py-4 px-6"></td>
+                            <td class="py-4 px-6 text-gray-900 font-bold">4 months</td>
+                            <td class="py-4 px-6 text-gray-900 font-bold">899,000</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="mt-6 text-gray-700">
+                <p><strong>Caisera.ai Scenarios (Full):</strong> Advanced inbound/outbound (e.g., sales cycle, order tracking, support).</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack -->
+    <section id="tech-stack" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold mb-12">Proposed Tech Stack</h2>
+            <p class="mb-8 text-gray-700">We plan to use a tech stack that uses modern frameworks and is easy to understand and does not have a steep learning curve</p>
+            <div class="overflow-x-auto">
+                <table class="min-w-full bg-white border border-gray-200 rounded-lg shadow-md">
+                    <thead>
+                        <tr class="bg-gray-100">
+                            <th class="py-4 px-6 text-left font-bold">Component</th>
+                            <th class="py-4 px-6 text-left font-bold">Basic Implementation (R150k)</th>
+                            <th class="py-4 px-6 text-left font-bold">Full Implementation (R899K)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-t border-gray-200">
+                            <td class="py-4 px-6 text-gray-800 font-medium">Frontend</td>
+                            <td class="py-4 px-6 text-gray-600">React JS</td>
+                            <td class="py-4 px-6 text-gray-600">React JS</td>
+                        </tr>
+                        <tr class="border-t border-gray-200 bg-gray-50">
+                            <td class="py-4 px-6 text-gray-800 font-medium">Backend</td>
+                            <td class="py-4 px-6 text-gray-600">Node js + Express</td>
+                            <td class="py-4 px-6 text-gray-600">Node js + Express</td>
+                        </tr>
+                        <tr class="border-t border-gray-200">
+                            <td class="py-4 px-6 text-gray-800 font-medium">CMS</td>
+                            <td class="py-4 px-6 text-gray-600">Strapi</td>
+                            <td class="py-4 px-6 text-gray-600">Strapi</td>
+                        </tr>
+                        <tr class="border-t border-gray-200 bg-gray-50">
+                            <td class="py-4 px-6 text-gray-800 font-medium">AI Chatbot</td>
+                            <td class="py-4 px-6 text-gray-600">Caisera AI Conversational engine (Basic Tier)</td>
+                            <td class="py-4 px-6 text-gray-600">Caisera AI Conversational engine (Premium Tier)</td>
+                        </tr>
+                        <tr class="border-t border-gray-200">
+                            <td class="py-4 px-6 text-gray-800 font-medium">Database</td>
+                            <td class="py-4 px-6 text-gray-600">MySQL</td>
+                            <td class="py-4 px-6 text-gray-600">MySQL</td>
+                        </tr>
+                        <tr class="border-t border-gray-200 bg-gray-50">
+                            <td class="py-4 px-6 text-gray-800 font-medium">AR/3D Reviews</td>
+                            <td class="py-4 px-6 text-gray-600">Three.js</td>
+                            <td class="py-4 px-6 text-gray-600">Unity</td>
+                        </tr>
+                        <tr class="border-t border-gray-200">
+                            <td class="py-4 px-6 text-gray-800 font-medium">Client Portal Auth</td>
+                            <td class="py-4 px-6 text-gray-600">Firebase Authentication</td>
+                            <td class="py-4 px-6 text-gray-600">Firebase Authentication + 2FA</td>
+                        </tr>
+                        <tr class="border-t border-gray-200 bg-gray-50">
+                            <td class="py-4 px-6 text-gray-800 font-medium">Hosting</td>
+                            <td class="py-4 px-6 text-gray-600">AWS Lightsail</td>
+                            <td class="py-4 px-6 text-gray-600">AWS Lightsail</td>
+                        </tr>
+                        <tr class="border-t border-gray-200">
+                            <td class="py-4 px-6 text-gray-800 font-medium">Security</td>
+                            <td class="py-4 px-6 text-gray-600">SSL, Basic Firewall</td>
+                            <td class="py-4 px-6 text-gray-600">SSL, Advanced Firewall</td>
+                        </tr>
+                        <tr class="border-t border-gray-200 bg-gray-50">
+                            <td class="py-4 px-6 text-gray-800 font-medium">SEO/analytics</td>
+                            <td class="py-4 px-6 text-gray-600">Google Analytics</td>
+                            <td class="py-4 px-6 text-gray-600">Google Analytics</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Timeline -->
+    <section id="timeline" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold mb-12 text-center">Project Timeline</h2>
+            
+            <!-- Option 1 Timeline -->
+            <h3 class="text-2xl font-bold mb-8">Option 1 (Basic Implementation)</h3>
+            <div class="relative mb-16">
+                <!-- Timeline line -->
+                <div class="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 h-full w-1 bg-gray-300"></div>
+                
+                <!-- Timeline items -->
+                <div class="md:flex mb-12 relative">
+                    <div class="md:w-1/2 md:pr-8 mb-8 md:mb-0 md:text-right">
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <h4 class="text-xl font-bold mb-2">1. Discovery & Design</h4>
+                            <p class="text-gray-600 mb-2">Requirements analysis & Simplified wireframes ui/ux</p>
+                            <p class="text-gray-700 font-medium">1.5 Weeks</p>
+                            <p class="text-gray-700 font-medium">Apr 1, 2025</p>
+                        </div>
+                    </div>
+                    <div class="absolute left-0 md:left-1/2 transform -translate-y-1/2 md:-translate-x-1/2 flex items-center justify-center w-12 h-12 rounded-full bg-yellow-400 text-black font-bold z-10">1</div>
+                    <div class="md:w-1/2 md:pl-8"></div>
+                </div>
+                
+                <div class="md:flex mb-12 relative">
+                    <div class="md:w-1/2 md:pr-8"></div>
+                    <div class="absolute left-0 md:left-1/2 transform -translate-y-1/2 md:-translate-x-1/2 flex items-center justify-center w-12 h-12 rounded-full bg-yellow-400 text-black font-bold z-10">2</div>
+                    <div class="md:w-1/2 md:pl-8 mb-8 md:mb-0">
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <h4 class="text-xl font-bold mb-2">2. Development</h4>
+                            <p class="text-gray-600 mb-2">Frontend, backend, APIs, Strapi, Caisera.ai, basic AR/portal</p>
+                            <p class="text-gray-700 font-medium">3 weeks</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:flex mb-12 relative">
+                    <div class="md:w-1/2 md:pr-8 mb-8 md:mb-0 md:text-right">
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <h4 class="text-xl font-bold mb-2">3. Testing</h4>
+                            <p class="text-gray-600 mb-2">Basic UAT, API/AR/portal testing</p>
+                            <p class="text-gray-700 font-medium">0.5 Weeks</p>
+                        </div>
+                    </div>
+                    <div class="absolute left-0 md:left-1/2 transform -translate-y-1/2 md:-translate-x-1/2 flex items-center justify-center w-12 h-12 rounded-full bg-yellow-400 text-black font-bold z-10">3</div>
+                    <div class="md:w-1/2 md:pl-8"></div>
+                </div>
+                
+                <div class="md:flex relative">
+                    <div class="md:w-1/2 md:pr-8"></div>
+                    <div class="absolute left-0 md:left-1/2 transform -translate-y-1/2 md:-translate-x-1/2 flex items-center justify-center w-12 h-12 rounded-full bg-yellow-400 text-black font-bold z-10">4</div>
+                    <div class="md:w-1/2 md:pl-8">
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <h4 class="text-xl font-bold mb-2">4. Deployment</h4>
+                            <p class="text-gray-600 mb-2">Launch, minimal training</p>
+                            <p class="text-gray-700 font-medium">0.5 Weeks</p>
+                            <p class="text-gray-700 font-medium">May 10, 2025</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Option 2 Timeline -->
+            <h3 class="text-2xl font-bold mb-8">Option 2 (Full Implementation)</h3>
+            <div class="relative">
+                <!-- Timeline line -->
+                <div class="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 h-full w-1 bg-gray-300"></div>
+                
+                <!-- Timeline items -->
+                <div class="md:flex mb-12 relative">
+                    <div class="md:w-1/2 md:pr-8 mb-8 md:mb-0 md:text-right">
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <h4 class="text-xl font-bold mb-2">1. Discovery & Design</h4>
+                            <p class="text-gray-600 mb-2">Detailed requirements analysis wireframes & UI/UX</p>
+                            <p class="text-gray-700 font-medium">3 weeks</p>
+                            <p class="text-gray-700 font-medium">Apr 1, 2025</p>
+                        </div>
+                    </div>
+                    <div class="absolute left-0 md:left-1/2 transform -translate-y-1/2 md:-translate-x-1/2 flex items-center justify-center w-12 h-12 rounded-full bg-yellow-400 text-black font-bold z-10">1</div>
+                    <div class="md:w-1/2 md:pl-8"></div>
+                </div>
+                
+                <div class="md:flex mb-12 relative">
+                    <div class="md:w-1/2 md:pr-8"></div>
+                    <div class="absolute left-0 md:left-1/2 transform -translate-y-1/2 md:-translate-x-1/2 flex items-center justify-center w-12 h-12 rounded-full bg-yellow-400 text-black font-bold z-10">2</div>
+                    <div class="md:w-1/2 md:pl-8 mb-8 md:mb-0">
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <h4 class="text-xl font-bold mb-2">2. Development</h4>
+                            <p class="text-gray-600 mb-2">Frontend, backend, APIs, Strapi, Caisera.ai, full AR/portal</p>
+                            <p class="text-gray-700 font-medium">6 weeks</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:flex mb-12 relative">
+                    <div class="md:w-1/2 md:pr-8 mb-8 md:mb-0 md:text-right">
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <h4 class="text-xl font-bold mb-2">3. Testing</h4>
+                            <p class="text-gray-600 mb-2">Comprehensive UAT, API/AR/portal</p>
+                            <p class="text-gray-700 font-medium">2 weeks</p>
+                        </div>
+                    </div>
+                    <div class="absolute left-0 md:left-1/2 transform -translate-y-1/2 md:-translate-x-1/2 flex items-center justify-center w-12 h-12 rounded-full bg-yellow-400 text-black font-bold z-10">3</div>
+                    <div class="md:w-1/2 md:pl-8"></div>
+                </div>
+                
+                <div class="md:flex relative">
+                    <div class="md:w-1/2 md:pr-8"></div>
+                    <div class="absolute left-0 md:left-1/2 transform -translate-y-1/2 md:-translate-x-1/2 flex items-center justify-center w-12 h-12 rounded-full bg-yellow-400 text-black font-bold z-10">4</div>
+                    <div class="md:w-1/2 md:pl-8">
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <h4 class="text-xl font-bold mb-2">4. Deployment</h4>
+                            <p class="text-gray-600 mb-2">Launch, full training</p>
+                            <p class="text-gray-700 font-medium">1 Week</p>
+                            <p class="text-gray-700 font-medium">Jun 30, 2025</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Payment Terms -->
+    <section id="payment" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold mb-12">Payment Terms</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <img src="./assets/payment.jpg" alt="Team working on project" class="rounded-lg shadow-xl">
+                </div>
+                <div>
+                    <ul class="space-y-6">
+                        <li class="flex items-start">
+                            <div class="yellow-accent min-w-8 h-8 mr-4 mt-1"></div>
+                            <div>
+                                <p class="text-gray-800 font-medium">50% Upfront: Payment due before project commencement (Basic: R75,000; Full: R449,500), payable by April 1, 2025.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="yellow-accent min-w-8 h-8 mr-4 mt-1"></div>
+                            <div>
+                                <p class="text-gray-800 font-medium">25% Halfway: Payment due at the midpoint of development (Basic: R37,500 by May 2, 2025; Full: R224,750 by June 9, 2025).</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="yellow-accent min-w-8 h-8 mr-4 mt-1"></div>
+                            <div>
+                                <p class="text-gray-800 font-medium">25% After UAT: Payment due after successful User Acceptance Testing (UAT) and before live deployment (Basic: R37,500 by May 6, 2025; Full: R224,750 by June 23, 2025).</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="yellow-accent min-w-8 h-8 mr-4 mt-1"></div>
+                            <div>
+                                <p class="text-gray-800 font-medium">Payments are non-refundable once milestones are met. Invoices will be issued 7 days prior to each milestone, with payment expected within 5 business days.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   
+
+    <!-- Chatbot Modal -->
+
+
+    <script>
+        // Chatbot functionality
+        const chatbotButton = document.querySelector('.chatbot-button');
+        const chatbotModal = document.getElementById('chatbot-modal');
+        const closeChatbot = document.getElementById('close-chatbot');
+        const chatInput = document.getElementById('chat-input');
+        const sendChat = document.getElementById('send-chat');
+        const chatMessages = document.getElementById('chat-messages');
+
+        chatbotButton.addEventListener('click', () => {
+            chatbotModal.classList.remove('hidden');
+        });
+
+        closeChatbot.addEventListener('click', () => {
+            chatbotModal.classList.add('hidden');
+        });
+
+        // Simple mock chatbot functionality
+        function addMessage(text, isUser = false) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = 'mb-4 ' + (isUser ? 'text-right' : '');
+            
+            const messageContent = document.createElement('div');
+            messageContent.className = isUser 
+                ? 'bg-yellow-400 rounded-lg py-2 px-4 inline-block text-black'
+                : 'bg-gray-300 rounded-lg py-2 px-4 inline-block text-gray-800';
+            
+            const messagePara = document.createElement('p');
+            messagePara.textContent = text;
+            
+            messageContent.appendChild(messagePara);
+            messageDiv.appendChild(messageContent);
+            chatMessages.appendChild(messageDiv);
+            
+            // Scroll to bottom
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        sendChat.addEventListener('click', () => {
+            const message = chatInput.value.trim();
+            if (message) {
+                addMessage(message, true);
+                chatInput.value = '';
+                
+                // Mock response (in a real implementation, this would connect to Dialogflow CX)
+                setTimeout(() => {
+                    let response = "I'll connect you with our team. In the meantime, you can explore our glass product options on the website.";
+                    
+                    if (message.toLowerCase().includes('price') || message.toLowerCase().includes('cost')) {
+                        response = "Our prices vary based on the type of glass and specifications. Please see our proposal for detailed pricing or contact our sales team.";
+                    } else if (message.toLowerCase().includes('time') || message.toLowerCase().includes('timeline')) {
+                        response = "The basic implementation takes about 2.5 months, while the full implementation takes about 4 months. Check our timeline section for details.";
+                    }
+                    
+                    addMessage(response);
+                }, 1000);
+            }
+        });
+
+        chatInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                sendChat.click();
+            }
+        });
+
+        // Smooth scrolling for navigation
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
